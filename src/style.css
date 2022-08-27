@@ -1,0 +1,35 @@
+form,
+h1,
+h2,
+.container {
+  text-align: center;
+}
+.container-body {
+  border: 1px solid red;
+  max-width: 800px;
+  display: block;
+  margin: 50px auto;
+  padding: 40px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: capitalize;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 30px;
+}
+li {
+  list-style: none;
+  text-align: left;
+}
+#current-degree {
+  color: blue;
+  font-size: 50px;
+}

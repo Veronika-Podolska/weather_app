@@ -11,9 +11,10 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container-body">
       <form>
         <input
           type="text"
@@ -21,8 +22,8 @@
           autofocus="on"
           autocomplete="on"
         />
-        <input type="submit" value="Search" />
         <input type="submit" value="Current location" />
+        <input type="submit" value="Search" />
       </form>
       <h1>Kyiv</h1>
       <h2>Friday 12:35</h2>
@@ -37,7 +38,7 @@
           </div>
           <div class="col">
             <ul>
-              <li>25C</li>
+              <li><span id="current-degree">25°</span>C|F</li>
               <li>Humidity 23%</li>
               <li>Wind 9km/h</li>
             </ul>
