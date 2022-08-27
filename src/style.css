@@ -33,3 +33,6 @@ li {
   color: blue;
   font-size: 50px;
 }
+#current-description {
+  text-transform: capitalize;
+}
