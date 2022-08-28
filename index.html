@@ -24,13 +24,11 @@
           autocomplete="on"
           id="search-input"
         />
-        <input
-          type="submit"
-          value="Current location"
-          id="current-location-button"
-        />
+
         <input type="submit" value="Search" />
       </form>
+      <button id="current-location-button">Current location</button>
+
       <h1>Kyiv</h1>
       <h2>Friday 12:35</h2>
       <div class="container">
@@ -40,7 +38,14 @@
           </div>
           <div class="col">
             <ul>
-              <li><span id="current-degree">25</span>°C|F</li>
+              <li>
+                <span id="current-degree">25</span
+                ><a href="#" id="celsius-link">°C</a>|<a
+                  href="#"
+                  id="fahrenheit-link"
+                  >F</a
+                >
+              </li>
               <li><span id="current-description"></span></li>
               <li>Humidity <span id="current-humidity">23</span>%</li>
               <li>Wind <span id="current-wind">9</span>m/s</li>
