@@ -34,8 +34,12 @@ li {
   list-style: none;
 }
 form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgb(221, 221, 221, 0.2);
+  border-radius: 60px;
+  padding: 10px 20px;
   margin-bottom: 55px;
-  text-align: center;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   color: rgb(120, 122, 145);
@@ -73,4 +77,19 @@ button {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   color: rgb(120, 122, 145);
+}
+#search-input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  width: 85%;
+}
+#search-button {
+  border-radius: 50%;
+  border: 0;
+}
+#current-location-button {
+  border-radius: 50%;
+  border: 0;
 }
