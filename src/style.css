@@ -93,3 +93,11 @@ button {
   border-radius: 50%;
   border: 0;
 }
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+  color: rgb(236, 153, 75);
+  position: relative;
+  top: -72px;
+  font-weight: 300;
+}
