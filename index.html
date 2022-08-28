@@ -11,6 +11,13 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;600;700&family=Lato:wght@100;300;400;700;900&family=Rubik:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
@@ -24,32 +31,33 @@
           autocomplete="on"
           id="search-input"
         />
-
         <input type="submit" value="Search" />
+        <button id="current-location-button">My Location</button>
       </form>
-      <button id="current-location-button">Current location</button>
 
-      <h1>Kyiv</h1>
-      <h2>Friday 12:35</h2>
-      <div class="container">
+      <div class="container-weather-info">
         <div class="row">
-          <div class="col">
-            <img src="" width="50" id="main-icon" />
+          <div class="col city-info">
+            <h1>Kyiv</h1>
+            <h2>Friday 12:35</h2>
+            <img src="" width="60" id="main-icon" />
           </div>
-          <div class="col">
-            <ul>
-              <li>
-                <span id="current-degree">25</span
-                ><a href="#" id="celsius-link">°C</a>|<a
-                  href="#"
-                  id="fahrenheit-link"
-                  >F</a
-                >
-              </li>
-              <li><span id="current-description"></span></li>
-              <li>Humidity <span id="current-humidity">23</span>%</li>
-              <li>Wind <span id="current-wind">9</span>m/s</li>
-            </ul>
+          <div class="row">
+            <div class="col degree-info">
+              <span id="current-degree">25</span
+              ><a href="#" id="celsius-link">°C</a>|<a
+                href="#"
+                id="fahrenheit-link"
+                >F</a
+              >
+            </div>
+            <div class="col weather-additional-info">
+              <ul>
+                <li><span id="current-description">Clear sky</span></li>
+                <li>Humidity <span id="current-humidity">23</span>%</li>
+                <li>Wind <span id="current-wind">9</span>m/s</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
