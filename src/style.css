@@ -6,7 +6,7 @@ body {
   border-radius: 70px;
   max-width: 1000px;
   display: block;
-  margin: 50px auto;
+  margin: 50px auto 10px;
   padding: 40px;
   background-color: white;
 }
@@ -100,4 +100,9 @@ button {
   position: relative;
   top: -72px;
   font-weight: 300;
+}
+footer {
+  font-size: 14px;
+  color: rgb(6, 17, 60);
+  margin-left: 145px;
 }
