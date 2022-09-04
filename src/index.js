@@ -19,7 +19,9 @@ function fetchData(event) {
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
+      getForecast(response.data.coord);
     }
+
     let apiKey = `0c395d6ecc2a4c8d0c6102ab57ade34d`;
     let city = searchInput.value;
     let units = "metric";
@@ -27,9 +29,36 @@ function fetchData(event) {
     axios.get(apiUrl).then(showTemp);
   }
 }
-
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", fetchData);
+
+function getForecast(coordinates) {
+  let apiKey = "0c395d6ecc2a4c8d0c6102ab57ade34d";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      ` 
+        <div class="col">
+            <div class="forecast-day">${day}</div>
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" width="60" />
+            <div class="forecast-degree">23° 20°</div>
+        
+        </div>`;
+  });
+
+  forecast = forecast + `</div>`;
+  forecastElement.innerHTML = forecast;
+}
 
 function showCurrentTempLocation() {
   function showPosition(position) {
@@ -106,26 +135,3 @@ function convertToCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let forecast = `<div class="row">`;
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
-  days.forEach(function (day) {
-    forecast =
-      forecast +
-      ` 
-        <div class="col">
-            <div class="forecast-day">${day}</div>
-            <img src="http://openweathermap.org/img/wn/02d@2x.png" width="60" />
-            <div class="forecast-degree">23° 20°</div>
-        
-        </div>`;
-  });
-
-  forecast = forecast + `</div>`;
-  forecastElement.innerHTML = forecast;
-}
-
-displayForecast();
