@@ -106,3 +106,26 @@ function convertToCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      ` 
+        <div class="col">
+            <div class="forecast-day">${day}</div>
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" width="60" />
+            <div class="forecast-degree">23° 20°</div>
+        
+        </div>`;
+  });
+
+  forecast = forecast + `</div>`;
+  forecastElement.innerHTML = forecast;
+}
+
+displayForecast();
