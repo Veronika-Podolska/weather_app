@@ -1,14 +1,16 @@
 body {
-  background-color: rgb(244, 244, 244);
+  background-color: rgba(244, 244, 244);
 }
 .container-body {
-  border: 1px solid rgb(244, 244, 244);
   border-radius: 70px;
   max-width: 1000px;
   display: block;
   margin: 50px auto 10px;
   padding: 40px;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
 }
 
 h1 {
@@ -34,7 +36,7 @@ li {
   list-style: none;
 }
 form {
-  max-width: 600px;
+  max-width: 780px;
   margin: 0 auto;
   background-color: rgb(221, 221, 221, 0.2);
   border-radius: 60px;
@@ -57,7 +59,7 @@ button {
 }
 .container-weather-info {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .city-info {
@@ -83,7 +85,7 @@ button {
   border: 0;
   outline: none;
   font-size: 16px;
-  width: 85%;
+  width: 90%;
 }
 #search-button {
   border-radius: 50%;
@@ -105,4 +107,20 @@ footer {
   font-size: 14px;
   color: rgb(6, 17, 60);
   margin-left: 300px;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin: 30px auto 35px;
+  max-width: 760px;
+  display: block;
+}
+.forecast-day,
+.forecast-degree-max {
+  font-family: "Rubik", sans-serif;
+  color: rgb(6, 17, 60);
+}
+.forecast-degree-min {
+  font-family: "Rubik", sans-serif;
+  color: rgb(120, 122, 145);
 }
