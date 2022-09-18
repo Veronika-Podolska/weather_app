@@ -1,34 +1,37 @@
+function showTemp(response) {
+  celsiusDegree = response.data.main.temp;
+  let cityName = document.querySelector("h1");
+  cityName.innerHTML = response.data.name;
+  let temperatureSign = document.querySelector("#current-degree");
+  temperatureSign.innerHTML = Math.round(celsiusDegree);
+  let humidity = document.querySelector("#current-humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#current-wind");
+  wind.innerHTML = response.data.wind.speed;
+  let description = document.querySelector("#current-description");
+  description.innerHTML = response.data.weather[0].description;
+  let weatherIcon = document.querySelector("#main-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  getForecast(response.data.coord);
+}
+
+function search(city) {
+  let apiKey = `0c395d6ecc2a4c8d0c6102ab57ade34d`;
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+}
+search("San Diego");
+
 function fetchData(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
-  if (searchInput.value) {
-    function showTemp(response) {
-      celsiusDegree = response.data.main.temp;
-      let cityName = document.querySelector("h1");
-      cityName.innerHTML = response.data.name;
-      let temperatureSign = document.querySelector("#current-degree");
-      temperatureSign.innerHTML = Math.round(celsiusDegree);
-      let humidity = document.querySelector("#current-humidity");
-      humidity.innerHTML = response.data.main.humidity;
-      let wind = document.querySelector("#current-wind");
-      wind.innerHTML = response.data.wind.speed;
-      let description = document.querySelector("#current-description");
-      description.innerHTML = response.data.weather[0].description;
-      let weatherIcon = document.querySelector("#main-icon");
-      weatherIcon.setAttribute(
-        "src",
-        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-      );
-      getForecast(response.data.coord);
-    }
-
-    let apiKey = `0c395d6ecc2a4c8d0c6102ab57ade34d`;
-    let city = searchInput.value;
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showTemp);
-  }
+  search(searchInput.value);
 }
+
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", fetchData);
 
